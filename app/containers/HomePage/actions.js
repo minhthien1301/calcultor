@@ -1,13 +1,13 @@
- import * as types from './constants';
+import * as types from './constants';
 export function getResult(value) {
   return {
     type: types.GET_RESULT,
-    value
+    value,
   };
 }
 export function setValue(value) {
   return {
     type: types.SET_VALUE,
-    value
+    value,
   };
 }

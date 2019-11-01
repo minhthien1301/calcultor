@@ -12,11 +12,11 @@ const key = 'home';
 function HomePage({ number, onSetValue }) {
   useInjectReducer({ key, reducer });
 
-  const addNumber = e => {
+  const addNumber = value => {
     if (Number.isInteger(number)) {
       number = '';
     }
-    onSetValue(number + e);
+    onSetValue(number + value);
   };
   const getResult = () => {
     number = number.replace(/^0+/, '');
@@ -72,8 +72,8 @@ const mapStateToProps = createStructuredSelector({
 });
 export function mapDispatchToProps(dispatch) {
   return {
-    onGetResult: a => dispatch(actions.getResult(a)),
-    onSetValue: a => dispatch(actions.setValue(a)),
+    onGetResult: num => dispatch(actions.getResult(num)),
+    onSetValue: num => dispatch(actions.setValue(num)),
   };
 }
 
